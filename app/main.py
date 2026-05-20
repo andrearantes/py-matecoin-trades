@@ -2,13 +2,13 @@ import json
 from decimal import Decimal
 
 
-def calculate_profit(way_file: str) -> dict:
+def calculate_profit(way_file: str) -> None:
     with open(way_file, "r") as file:
         trade_data = json.load(file)
 
-    balance_matecoin = 0.0
-    spent = 0.0
-    earned = 0.0
+    balance_matecoin = 0
+    spent = 0
+    earned = 0
 
     for trade in trade_data:
         bought = trade.get("bought")
