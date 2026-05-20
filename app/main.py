@@ -17,7 +17,7 @@ def calculate_profit(way_file: str) -> None:
         if bought is not None:
             balance_matecoin += Decimal(bought)
             spent += Decimal(bought) * price
-        elif sold is not None:
+        if sold is not None:
             balance_matecoin -= Decimal(sold)
             earned += Decimal(sold) * price
 
@@ -30,5 +30,3 @@ def calculate_profit(way_file: str) -> None:
 
     with open("profit.json", "w") as output_file:
         json.dump(results, output_file, indent=4)
-
-    return results
