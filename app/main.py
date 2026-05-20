@@ -10,7 +10,6 @@ def calculate_profit(way_file):
     spent = 0.0
     earned = 0.0
 
-
     for trade in trade_data:
         bought = trade.get('bought')
         sold = trade.get('sold')
